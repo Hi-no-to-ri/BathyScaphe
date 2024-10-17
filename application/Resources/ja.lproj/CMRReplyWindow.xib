@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1050" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CMRReplyController">
+            <connections>
+                <outlet property="_deleteMailButton" destination="105" id="122"/>
+                <outlet property="_mailField" destination="29" id="123"/>
+                <outlet property="_nameComboBox" destination="27" id="124"/>
+                <outlet property="_sageButton" destination="106" id="121"/>
+                <outlet property="_scrollView" destination="118" id="130"/>
+                <outlet property="m_controller" destination="292" id="299"/>
+                <outlet property="m_templateInsertionButton" destination="211" id="217"/>
+                <outlet property="window" destination="12" id="73"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Reply:" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="12" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="132" y="277" width="480" height="385"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="300" height="200"/>
+            <view key="contentView" id="20">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="385"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField verticalHuggingPriority="750" id="26">
+                        <rect key="frame" x="30" y="351" width="43" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="名前：" id="304">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <comboBox verticalHuggingPriority="750" id="27">
+                        <rect key="frame" x="78" y="347" width="385" height="26"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="5" id="305">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                        <connections>
+                            <binding destination="292" name="value" keyPath="selection.name" id="298">
+                                <dictionary key="options">
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
+                            <outlet property="dataSource" destination="-2" id="131"/>
+                            <outlet property="delegate" destination="-2" id="127"/>
+                        </connections>
+                    </comboBox>
+                    <textField verticalHuggingPriority="750" id="28">
+                        <rect key="frame" x="17" y="323" width="56" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="メール：" id="306">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" id="29">
+                        <rect key="frame" x="78" y="321" width="327" height="22"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="307">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="292" name="value" keyPath="selection.mail" id="297">
+                                <dictionary key="options">
+                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
+                            <outlet property="delegate" destination="-2" id="132"/>
+                        </connections>
+                    </textField>
+                    <button toolTip="メール欄から文字列を取り除きます。" verticalHuggingPriority="750" id="105">
+                        <rect key="frame" x="436" y="320" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" borderStyle="border" id="308">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="deleteMail:" target="-2" id="109"/>
+                            <binding destination="-2" name="enabled" keyPath="document.mail" id="263">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">BSNotNilOrEmptyValueTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <button toolTip="メール欄に “sage” を挿入します。" verticalHuggingPriority="750" id="106">
+                        <rect key="frame" x="413" y="320" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="insertSage" imagePosition="only" alignment="center" borderStyle="border" id="309">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="insertSage:" target="-2" id="110"/>
+                            <binding destination="-2" name="enabled" keyPath="document.mail" id="259">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">BSNotContainsSAGEValueTransformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="114">
+                        <rect key="frame" x="0.0" y="383" width="480" height="5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <customView id="118" customClass="NSScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="305"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </customView>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="128">
+                        <rect key="frame" x="0.0" y="303" width="480" height="5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="80"/>
+            </connections>
+        </window>
+        <customView id="185" userLabel="Custom View">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <popUpButton verticalHuggingPriority="750" id="211">
+                    <rect key="frame" x="17" y="18" width="130" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="roundTextured" title="テンプレート" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" inset="2" pullsDown="YES" selectedItem="216" id="310">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="213">
+                            <items>
+                                <menuItem title="テンプレート" hidden="YES" id="216"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+            </subviews>
+        </customView>
+        <objectController objectClassName="CMRReplyMessenger" id="292" userLabel="Object Controller">
+            <declaredKeys>
+                <string>name</string>
+                <string>mail</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentObject" keyPath="document" id="294"/>
+            </connections>
+        </objectController>
+    </objects>
+    <resources>
+        <image name="insertSage" width="20" height="14"/>
+    </resources>
+</document>

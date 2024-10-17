@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* -------------------------------------------------------
+	Quick Look Thema (Indigo)
+	BathyScaphe
+	
+	by 1024jp on 2012-08-15
+   ------------------------------------------------------- */
+
+/* memo: 
+	- 本物のテーマの色指定と見た目が同じになるように黒以外はそれぞれ輝度に+5%している
+	- ホスト・ブックマークは一応書いているがそもそも表示されない
+*/ 
+
+/* 下記以外の項目 */
+dt > .number,
+dt > * {
+	color: hsl(210,100%,30%) !important;
+	font: normal 12px 'Hiragino Kaku Gothic ProN';
+}
+/* 名前 */
+dt .name {
+	color: hsl(210,100%,30%);
+	font: normal 12px 'Hiragino Kaku Gothic ProN';
+}
+/* 項目の題名 */
+dt {
+	color: hsl(0,0%,45%);
+	font: bold 12px 'Hiragino Kaku Gothic ProN';
+}
+/* ホスト (未対応) */
+dt .host {
+	color: hsl(0,0%,65%);
+	font: normal 10px 'Menlo';
+}
+/* Be プロフィール */
+dt > a:last-child {
+	font: normal 10px 'Menlo';
+}
+/* 本文 */
+dd {
+	color: hsl(0,0%,0%);
+	font: normal 12px 'Hiragino Kaku Gothic ProN';
+}
+/* ブックマーク (未対応) */
+dd {
+	color: hsl(0,0%,0%);
+	font: normal 12px 'Hiragino Kaku Gothic ProN';
+}
+/* AA */
+div.text-art dd {
+	font: normal 16px 'IPAMonaPGothic', 'MS PGothic', 'Mona';
+}
+/* リンク */
+dt > a:last-child,
+dd a {
+	color: hsl(240,100%,52%) !important;
+}
+
+/* 背景のカラー */
+body {
+	background: hsl(0,0%,100%);
+}
+
+/* 複数回出現した ID のカラー */
+dt > .id:not([data-bs-idCount="1"]) {
+	color: hsl(0,94%,56%) !important;	/* 10以上 */
+}
+dt > .id[data-bs-idCount="5"],
+dt > .id[data-bs-idCount="6"],
+dt > .id[data-bs-idCount="7"],
+dt > .id[data-bs-idCount="8"],
+dt > .id[data-bs-idCount="9"] {
+	color: hsl(300,51%,43%) !important;	/* 5-9 */
+}
+dt > .id[data-bs-idCount="2"],
+dt > .id[data-bs-idCount="3"],
+dt > .id[data-bs-idCount="4"] {
+	color: hsl(204,58%,57%) !important;	/* 2-4 */
+}

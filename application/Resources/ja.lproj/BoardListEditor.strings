@@ -1,0 +1,72 @@
+/* localized strings for Board List Editing */
+"Edit Board Msg" = "掲示板 “%@” の新しい名前または URL を入力してください。";
+"Edit Category Msg" = "カテゴリ “%@” の新しい名前を入力してください。";
+"Add Category Msg" = "新しく追加するカテゴリの名前を入力してください。";
+
+"Validation Error 1" = "URL は http:// から始まっていなければなりません";
+"Validation Error 2" = "URL は / で終わっていなければなりません";
+"Validation Error 3" = "名前が入力されていません";
+"Validation Error 4" = "URL が入力されていません";
+
+"Same Name Exists" = "すでに同じ名前の項目が存在します。";
+"Add Board Error Msg info2chnet" = "この URL で掲示板を追加することはできません。";
+
+"Edit Board Error Msg info2chnet" = "この URL に変更することはできません。";
+"Edit Board Error Info info2chnet" = "%@ は、BathyScaphe で閲覧可能な掲示板ではありません。";
+
+"Boards list" = "bs_addboard_sheet";
+"Edit Board HelpAnchor" = "bs_editboard_sheet_editboard";
+"Edit Category HelpAnchor" = "bs_editboard_sheet_category";
+"Add Category HelpAnchor" = "bs_editboard_sheet_category"; /* same as edit category */
+
+"So could not add to your Boards List." = "同じ名前の掲示板を重複して登録することはできません。よって、掲示板を追加できませんでした。";
+
+"ErrNamesSeparater" = "”、“";
+"ErrNamesCover" = "“%@”";
+
+"%@ are not added to your Boards List." = "同じ名前の掲示板を重複して登録することはできません。よって、%@ は掲示板リストに追加できませんでした。";
+
+"So cannot change name." = "同じ名前のカテゴリを複数作ることはできません。よって、カテゴリの名前を変更できませんでした。";
+"So cannot add category." = "同じ名前のカテゴリを複数作ることはできません。よって、カテゴリを作成できませんでした。";
+
+/* 掲示板の名称変更 */
+"Converting Log File(s)..." = "ログファイルを変換しています…";
+"Converting Reply Document File(s)..." = "下書きファイルを変換しています…";
+"Removing Old Folder..." = "古いフォルダを削除しています…";
+"Passing Board Properties..." = "掲示板オプションの内容を移行しています…";
+"Editing Board List Item..." = "掲示板リストの内容を更新しています…";
+
+"BeforeYouBeginMessage" = "掲示板の名前を変更する前に、以下の注意事項を確認してください。処理を開始してもよろしいですか？";
+"BeforeYouBeginDescription" = "•掲示板のログファイルの数が多いほど、変更処理に時間がかかります
+•安全のため、変更処理の間は BathyScaphe で他の操作を行うことができません
+•変更処理を途中で中止することはできません
+•掲示板のログファイルの合計サイズと同程度の空き容量がディスクに必要です
+";
+
+"BeforeYouBeginCancel" = "中止";
+"BeforeYouBeginOK" = "名前を変更";
+
+"PrepareAlertMessage" = "掲示板 “%@” のスレッドまたは下書きが開いているため、掲示板の名前を変更できません。自動的にこれらを閉じてもよろしいですか？";
+"PrepareAlertDescription" = "“閉じて続ける” を選択すると、閉じた後で掲示板の名前を変更します。“中止” を選択すると、スレッドや下書きは開いたままで、掲示板の名前は変更されません。";
+"PrepareAlertStop" = "中止";
+"PrepareAlertContinue" = "閉じて続ける";
+
+"CreateNewBoardNameFolderDescription" = "変更後の掲示板名でログ保存用のフォルダを作成できなかったため、掲示板の名前を変更できませんでした。";
+"CreateNewReplyFolderDescription" = "新しい下書きフォルダを作成できなかったため、下書きの内容を正しく移行できませんでした。";
+"StopErrorSuggestion" = "掲示板の名前、およびログや各種設定は変更前の状態のまま残っています。";
+
+"LogCopyErrorDescription" = "いくつかのログファイルを新しい場所にコピーできませんでした。";
+
+"CopyErrorSuggestion" = "失敗したファイルを無視して処理を続けるか、または掲示板の名前の変更を中止できます。どちらの場合でもこれまでのログファイルは元の場所に残ります。";
+
+"ReplyCopyErrorDescription" = "いくつかの下書きファイルを新しい場所にコピーできませんでした。";
+
+"AllLogCopyErrorDescription" = "ログファイルを新しい場所にまったくコピーできなかったため、掲示板の名前を変更できませんでした。";
+
+"UnderlyingErrorDescription" = "掲示板の名前を変更する処理中にエラーが起きました。";
+
+"SpamSamplesCopyErrorDescription" = "掲示板の禁止語句の設定ファイルを新しい場所にコピーできませんでした。";
+"OldFolderDeletionErrorDescription" = "変更処理には成功しましたが、不要になった変更前の掲示板名のフォルダを削除できませんでした。";
+
+"ErrorRecoveryProceedOption" = "続ける";
+"ErrorRecoveryStopOption" = "中止";

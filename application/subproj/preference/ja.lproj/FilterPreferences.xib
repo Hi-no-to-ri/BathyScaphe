@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CMRFilterPrefController">
+            <connections>
+                <outlet property="_contentView" destination="5" id="12"/>
+                <outlet property="m_firstSymbolButton" destination="xz9-6N-LP4" id="1lV-r2-wYz"/>
+                <outlet property="m_overseaSymbolButton" destination="n5c-yF-fuz" id="jYb-i4-5mV"/>
+                <outlet property="m_preferencesObjectController" destination="68" id="299"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="530" height="452"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <userGuides>
+                <userLayoutGuide location="586" affinity="minY"/>
+                <userLayoutGuide location="210" affinity="minY"/>
+            </userGuides>
+            <subviews>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="55">
+                    <rect key="frame" x="492" y="17" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" inset="2" id="176">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openHelp:" target="-2" id="58"/>
+                    </connections>
+                </button>
+                <button toolTip="スレッドを表示する際に自動的に迷惑レスフィルタを動作させるには、ここをチェックします。" id="11">
+                    <rect key="frame" x="18" y="422" width="204" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="迷惑レスフィルタを有効にする" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="171">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="68" name="value" keyPath="selection.spamFilterEnabled" id="74">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="275">
+                    <rect key="frame" x="17" y="254" width="496" height="34"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="“掲示板オプション” パネルから、それぞれの掲示板ごとに異なった内容を設定することもできます。" id="276">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="36">
+                    <rect key="frame" x="17" y="130" width="69" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="禁止語句：" usesSingleLineMode="YES" id="180">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="AA を含むレスを迷惑レスと判定するには、ここをチェックします。" id="154">
+                    <rect key="frame" x="30" y="210" width="328" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="AA を迷惑レスと判定する（“AA スレッド” を除く）" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="178">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="68" name="enabled" keyPath="selection.spamFilterEnabled" id="216"/>
+                        <binding destination="68" name="value" keyPath="selection.treatsAsciiArtAsSpam" id="157">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <bool key="NSAlwaysPresentsApplicationModalAlerts" value="NO"/>
+                                <bool key="NSConditionallySetsEnabled" value="YES"/>
+                                <bool key="NSConditionallySetsHidden" value="NO"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="192">
+                    <rect key="frame" x="29" y="187" width="312" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="迷惑レスと判定する ID の末尾またはホストを選択：" id="193">
+                        <font key="font" size="13" name="HiraKakuProN-W3"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="13">
+                    <rect key="frame" x="17" y="393" width="134" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="迷惑レスの表示方法：" usesSingleLineMode="YES" id="172">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="237">
+                    <rect key="frame" x="17" y="296" width="212" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="すべての掲示板に適用される設定：" usesSingleLineMode="YES" id="238">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="16">
+                    <rect key="frame" x="32" y="327" width="256" height="58"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    <size key="cellSize" width="256" height="18"/>
+                    <size key="intercellSpacing" width="4" height="2"/>
+                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="184">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <cells>
+                        <column>
+                            <buttonCell type="radio" title="テキストのカラーを変更する" imagePosition="left" alignment="left" state="on" toolTip="迷惑レスのテキストを、右で設定したカラーに変更します。" tag="1" inset="2" id="17">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <buttonCell type="radio" title="カラーを変更し、ローカルあぼーんする" imagePosition="left" alignment="left" toolTip="迷惑レスのカラーを変更し、さらにローカルあぼーんします。" tag="2" inset="2" id="18">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <buttonCell type="radio" title="表示しない（透明あぼーん）" imagePosition="left" alignment="left" toolTip="迷惑レスを完全に隠します。透明あぼーんとも呼ばれます。" tag="3" inset="2" id="19">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </column>
+                    </cells>
+                    <connections>
+                        <binding destination="68" name="selectedTag" keyPath="selection.spamFilterBehavior" id="78">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="68" name="enabled" keyPath="selection.spamFilterEnabled" id="214"/>
+                    </connections>
+                </matrix>
+                <button toolTip="迷惑レスフィルタの学習結果をリセットします。" verticalHuggingPriority="750" id="22">
+                    <rect key="frame" x="14" y="12" width="205" height="32"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="push" title="自動学習の結果をリセット..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="175">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetSpamDB:" target="-2" id="29"/>
+                    </connections>
+                </button>
+                <button toolTip="メール欄の内容が “sage” ではないレスを迷惑レスと判定するには、ここをチェックします。" id="273">
+                    <rect key="frame" x="30" y="230" width="343" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="メール欄が “sage” ではない場合、迷惑レスと判定する" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="274">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="68" name="enabled" keyPath="selection.spamFilterEnabled" id="282"/>
+                        <binding destination="68" name="value" keyPath="selection.treatsNoSageAsSpam" id="280">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="297">
+                    <rect key="frame" x="26" y="52" width="192" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="禁止語句のリストを編集..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="298">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openNGExpressionsEditorSheet:" target="-2" id="300"/>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="301">
+                    <rect key="frame" x="17" y="88" width="496" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="“掲示板オプション” パネルから、それぞれの掲示板ごとに追加の禁止語句を設定することもできます。" id="302">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="“表示” 環境設定に移動し、迷惑レスのカラー設定を行います。" verticalHuggingPriority="750" id="317">
+                    <rect key="frame" x="386" y="358" width="131" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="カラーの設定…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="318">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openThemeEditorForColorSetting:" target="-2" id="321"/>
+                    </connections>
+                </button>
+                <button tag="101" id="xz9-6N-LP4">
+                    <rect key="frame" x="43" y="155" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="O" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="uXf-wr-aHc">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button tag="102" id="Igf-Os-e3K">
+                    <rect key="frame" x="67" y="155" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="Q" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="muq-XE-YJM">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button tag="103" id="3c6-IM-zbl">
+                    <rect key="frame" x="91" y="155" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="o" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R73-Vj-3g4">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button tag="104" id="Fs1-lC-8Eq">
+                    <rect key="frame" x="115" y="155" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="0" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hrV-fC-wYb">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button tag="200" id="n5c-yF-fuz">
+                    <rect key="frame" x="150" y="155" width="51" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="! (海外)" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GnF-cA-o4U">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="t4C-Ym-z08">
+                    <rect key="frame" x="207" y="159" width="290" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="一部の掲示板では、選択できる文字の種類が異なります。" id="hik-4C-K9C">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+        <objectController objectClassName="AppDefaults" id="68" userLabel="Object Controller">
+            <declaredKeys>
+                <string>messageFilteredColor</string>
+                <string>spamFilterEnabled</string>
+                <string>usesSpamMessageCorpus</string>
+                <string>spamFilterBehavior</string>
+                <string>spamCorpus</string>
+                <string>spamMessageCorpus</string>
+                <string>treatsAsciiArtAsSpam</string>
+                <string>treatsNoSageAsSpam</string>
+                <string>registrantShouldConsiderName</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentObject" keyPath="preferences" id="69"/>
+            </connections>
+        </objectController>
+    </objects>
+</document>

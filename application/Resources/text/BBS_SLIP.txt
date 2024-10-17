@@ -1,0 +1,9 @@
+// 行頭「//」はその行を無視（コメント）
+// ,の後にスペース挿入はしないこと
+// ↓も必要（BBS_SLIP の値が空の場合）
+=O,Q,o,0
+// 以下、現在取りうる値
+checked=O,Q,o,0
+feature=S,M,K,Q,o,F,H,0
+verbose=d,D,a,p,r,x,E,e,M,X,W,K,F,H,C,G,+,-,0
+vvv=d,D,a,p,r,x,E,e,M,X,W,K,F,H,C,G,+,-,0

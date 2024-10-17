@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment version="1050" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BSBoardInfoInspector">
+            <connections>
+                <outlet property="m_addNoNameBtn" destination="85" id="106"/>
+                <outlet property="m_editBoardURLButton" destination="199" id="203"/>
+                <outlet property="m_firstHostSymbolButton" destination="Nn3-aC-lbh" id="JrH-3s-0Ia"/>
+                <outlet property="m_overseaSymbolButton" destination="kxn-ty-zbi" id="1EO-bZ-ID5"/>
+                <outlet property="m_panes" destination="250" id="279"/>
+                <outlet property="m_removeNoNameBtn" destination="86" id="107"/>
+                <outlet property="m_toolbar" destination="236" id="278"/>
+                <outlet property="window" destination="5" id="28"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="掲示板オプション" allowsToolTipsWhenApplicationIsInactive="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Panel" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="327" y="359" width="320" height="335"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="320" height="316"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="335"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <userGuides>
+                    <userLayoutGuide location="306" affinity="minX"/>
+                    <userLayoutGuide location="125" affinity="minY"/>
+                </userGuides>
+                <subviews>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="18">
+                        <rect key="frame" x="288" y="10" width="21" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" inset="2" id="222">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openHelpForMe:" target="-2" id="29"/>
+                        </connections>
+                    </button>
+                    <tabView type="noTabsNoBorder" id="250">
+                        <rect key="frame" x="0.0" y="40" width="320" height="295"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="general" identifier="general" id="251">
+                                <view key="view" id="254">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" id="7">
+                                            <rect key="frame" x="11" y="218" width="103" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="名無しさんの名前：" id="215">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <tabView type="noTabsNoBorder" id="152">
+                                            <rect key="frame" x="14" y="82" width="292" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <font key="font" metaFont="message"/>
+                                            <tabViewItems>
+                                                <tabViewItem label="Tab" identifier="" id="153">
+                                                    <view key="view" id="155">
+                                                        <rect key="frame" x="0.0" y="0.0" width="292" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <scrollView autohidesScrollers="YES" horizontalLineScroll="16" horizontalPageScroll="10" verticalLineScroll="16" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="81">
+                                                                <rect key="frame" x="0.0" y="26" width="292" height="102"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <clipView key="contentView" id="cvd-RM-fD8">
+                                                                    <rect key="frame" x="1" y="1" width="290" height="100"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <subviews>
+                                                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="14" id="82">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="290" height="16"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <size key="intercellSpacing" width="3" height="2"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                            <tableColumns>
+                                                                                <tableColumn editable="NO" width="287" minWidth="40" maxWidth="1000" id="84">
+                                                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    </tableHeaderCell>
+                                                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="233">
+                                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                                    <connections>
+                                                                                        <binding destination="90" name="value" keyPath="arrangedObjects" id="97">
+                                                                                            <dictionary key="options">
+                                                                                                <bool key="NSCreatesSortDescriptor" value="NO"/>
+                                                                                            </dictionary>
+                                                                                        </binding>
+                                                                                    </connections>
+                                                                                </tableColumn>
+                                                                            </tableColumns>
+                                                                            <connections>
+                                                                                <binding destination="-2" name="hidden" keyPath="shouldEnableUI" id="151">
+                                                                                    <dictionary key="options">
+                                                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                                                    </dictionary>
+                                                                                </binding>
+                                                                            </connections>
+                                                                        </tableView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </clipView>
+                                                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="YES" id="235">
+                                                                    <rect key="frame" x="-100" y="-100" width="128" height="15"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </scroller>
+                                                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="234">
+                                                                    <rect key="frame" x="188" y="1" width="11" height="8"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </scroller>
+                                                            </scrollView>
+                                                            <button verticalHuggingPriority="750" id="85">
+                                                                <rect key="frame" x="0.0" y="-1" width="20" height="20"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="228">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="addNoName:" target="-2" id="111"/>
+                                                                    <binding destination="90" name="enabled" keyPath="canAdd" id="102"/>
+                                                                    <binding destination="-2" name="enabled2" keyPath="shouldEnableUI" previousBinding="102" id="130">
+                                                                        <dictionary key="options">
+                                                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                            <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                                            <integer key="NSNullPlaceholder" value="0"/>
+                                                                        </dictionary>
+                                                                    </binding>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" id="86">
+                                                                <rect key="frame" x="19" y="-1" width="20" height="20"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="229">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="remove:" target="90" id="93"/>
+                                                                    <binding destination="90" name="enabled" keyPath="canRemove" id="103"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </view>
+                                                </tabViewItem>
+                                                <tabViewItem label="View" identifier="" id="154">
+                                                    <view key="view" id="156">
+                                                        <rect key="frame" x="0.0" y="0.0" width="292" height="128"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <textField verticalHuggingPriority="750" id="157">
+                                                                <rect key="frame" x="39" y="43" width="213" height="42"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="この掲示板では書き込み時に名前を必ず入力しなければならないため、名無しさんの名前を設定する必要はありません。" id="230">
+                                                                    <font key="font" metaFont="smallSystemBold"/>
+                                                                    <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                    </view>
+                                                </tabViewItem>
+                                            </tabViewItems>
+                                            <connections>
+                                                <binding destination="-2" name="selectedIndex" keyPath="nanashiAllowed" id="166">
+                                                    <dictionary key="options">
+                                                        <decimal key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <decimal key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </tabView>
+                                        <textField verticalHuggingPriority="750" id="44">
+                                            <rect key="frame" x="11" y="268" width="87" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="掲示板の URL：" id="223">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="45">
+                                            <rect key="frame" x="11" y="246" width="243" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingMiddle" selectable="YES" sendsActionOnEndEditing="YES" alignment="left" title="Small System Font Text" id="224">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="boardURLAsString" id="54">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                        <bool key="NSAlwaysPresentsApplicationModalAlerts" value="NO"/>
+                                                        <bool key="NSConditionallySetsEditable" value="NO"/>
+                                                        <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                        <bool key="NSConditionallySetsHidden" value="NO"/>
+                                                        <bool key="NSContinuouslyUpdatesValue" value="NO"/>
+                                                        <string key="NSMultipleValuesPlaceholder"></string>
+                                                        <string key="NSNoSelectionPlaceholder"></string>
+                                                        <string key="NSNotApplicablePlaceholder">（不明）</string>
+                                                        <string key="NSNullPlaceholder">（URL がありません）</string>
+                                                        <bool key="NSRaisesForNotApplicableKeys" value="YES"/>
+                                                        <bool key="NSValidatesImmediately" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" id="199">
+                                            <rect key="frame" x="259" y="244" width="47" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="roundRect" title="編集…" bezelStyle="roundedRect" alignment="center" controlSize="small" state="on" borderStyle="border" inset="2" id="232">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="editBoardURL:" target="-2" id="202"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableURLEditing" id="206"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="451">
+                                            <rect key="frame" x="11" y="54" width="159" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SETTING.TXT の最終解析日：" id="452">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="453">
+                                            <rect key="frame" x="11" y="32" width="298" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="454">
+                                                <dateFormatter key="formatter" dateStyle="medium" timeStyle="short" id="455"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="lastDetectedDateForTargetBoard" id="459">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                        <string key="NSNullPlaceholder">（なし）</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="reply" identifier="reply" id="252">
+                                <view key="view" id="253">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" id="8">
+                                            <rect key="frame" x="11" y="265" width="158" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="書き込み時のデフォルト設定：" id="216">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="9">
+                                            <rect key="frame" x="11" y="243" width="50" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="名前：" id="217">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="10">
+                                            <rect key="frame" x="11" y="216" width="50" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="メール：" id="218">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button id="11">
+                                            <rect key="frame" x="63" y="172" width="148" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Be ログインして書き込む" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="219">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="shouldAlwaysBeLogin" id="21"/>
+                                                <binding destination="-2" name="enabled2" keyPath="shouldEnableBeBtn" previousBinding="66" id="70">
+                                                    <dictionary key="options">
+                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                        <integer key="NSNullPlaceholder" value="-1"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="66">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <integer key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="12">
+                                            <rect key="frame" x="66" y="241" width="240" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="220">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="defaultKotehan" id="37"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="60">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <integer key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="13">
+                                            <rect key="frame" x="66" y="214" width="240" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="221">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="defaultMail" id="20"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="63">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <integer key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="293">
+                                            <rect key="frame" x="11" y="119" width="153" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Unicode 文字の数値参照化：" id="294">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="295">
+                                            <rect key="frame" x="23" y="97" width="70" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" enabled="NO" sendsActionOnEndEditing="YES" id="296">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="charRefInfoString" id="433">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="hidden" keyPath="shouldEnableUI" id="436">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </textField>
+                                        <button id="462">
+                                            <rect key="frame" x="63" y="190" width="154" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="浪人ログインして書き込む" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="463">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="shouldAlwaysMaruLogin" id="478"/>
+                                                <binding destination="-2" name="enabled2" keyPath="shouldEnableMaruButton" previousBinding="467" id="474">
+                                                    <dictionary key="options">
+                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                        <integer key="NSNullPlaceholder" value="-1"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="467"/>
+                                            </connections>
+                                        </button>
+                                        <button id="464">
+                                            <rect key="frame" x="63" y="154" width="164" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="公式 p2 を使用して書き込む" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="465">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="shouldAlwaysP22chLogin" id="480"/>
+                                                <binding destination="-2" name="enabled2" keyPath="shouldEnableP22chButton" previousBinding="470" id="472">
+                                                    <dictionary key="options">
+                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                        <integer key="NSNullPlaceholder" value="-1"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="470"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="filter" identifier="filter" id="255">
+                                <view key="view" id="256">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button id="332">
+                                            <rect key="frame" x="11" y="208" width="295" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="メール欄が “sage” ではない場合、迷惑レスと判定する" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="333">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="410">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <integer key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="value" keyPath="treatsNoSageAsSpamAtTargetBoard" id="337">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="338">
+                                            <rect key="frame" x="11" y="232" width="298" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="以下の設定は、“迷惑レス” 環境設定の内容よりも優先して適用されます。" id="339">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="349">
+                                            <rect key="frame" x="11" y="40" width="298" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="ここで設定した禁止語句に加えて、“迷惑レス” 環境設定で設定した禁止語句も判定の対象になります。" id="369">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="370">
+                                            <rect key="frame" x="11" y="268" width="158" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="この掲示板に適用される設定：" id="371">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="372">
+                                            <rect key="frame" x="11" y="71" width="59" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="禁止語句：" id="373">
+                                                <font key="font" metaFont="smallSystemBold"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button id="402">
+                                            <rect key="frame" x="11" y="188" width="281" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="AA を迷惑レスと判定する（“AA スレッド” を除く）" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="403">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="414">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <integer key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="value" keyPath="treatsAsciiArtAsSpamAtTargetBoard" id="406">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" id="428">
+                                            <rect key="frame" x="27" y="8" width="158" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="禁止語句のリストを編集..." bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="429">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="openNGExpressionsEditorSheet:" target="-2" id="430"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="440"/>
+                                            </connections>
+                                        </button>
+                                        <button toolTip="名無しさんの名前が不定であったり、頻繁に変更される掲示板で、迷惑レスフィルタの誤作動を防ぐには、ここをチェックします。" id="441">
+                                            <rect key="frame" x="11" y="95" width="242" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="迷惑レスの自動学習時に名前欄を考慮しない" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" state="on" inset="2" id="442">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="-2" name="value" keyPath="registrantShouldConsiderNameAtTargetBoard" id="450">
+                                                    <dictionary key="options">
+                                                        <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="449">
+                                                    <dictionary key="options">
+                                                        <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                                        <integer key="NSNullPlaceholder" value="0"/>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </button>
+                                        <button tag="101" id="Nn3-aC-lbh">
+                                            <rect key="frame" x="23" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eTm-gz-vY8">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="9We-PQ-rhF"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="3cv-1j-jTo"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="102" id="lGT-iP-VHZ">
+                                            <rect key="frame" x="44" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GxX-1z-zsq">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="kb4-OD-rIc"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="wuS-x9-GcT"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="103" id="kxn-St-I5X">
+                                            <rect key="frame" x="65" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h6M-N1-A1C">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="YwP-sG-w3Y"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="XpU-Fv-jDj"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="104" id="A6P-q7-mdk">
+                                            <rect key="frame" x="86" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yVg-LK-PhP">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="TdX-l6-sa9"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="Crh-Ax-4DH"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="105" id="7QW-PC-rel">
+                                            <rect key="frame" x="107" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wpb-qq-DXp">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="1KA-SM-TZC"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="rt0-Q7-VOR"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="106" id="bR6-mF-fUl">
+                                            <rect key="frame" x="128" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1tR-gq-sjA">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="5o6-UO-ush"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="wjJ-vK-I9i"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="107" id="h9J-Oi-Qsb">
+                                            <rect key="frame" x="149" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sGe-2a-xkO">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="4RH-uz-a7z"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="nOn-DB-QuY"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="108" id="gvl-jG-Wf3">
+                                            <rect key="frame" x="170" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V5N-oF-gcK">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="C8e-Xa-ZkP"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="vA7-qo-x0p"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="109" id="vJT-pQ-HcU">
+                                            <rect key="frame" x="191" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tji-eB-S6H">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="19D-uo-ofk"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="c7A-9e-AUj"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="110" id="BBC-wD-742">
+                                            <rect key="frame" x="212" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fis-hY-rxK">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="g0Y-b0-XUN"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="Yeh-Tw-F7w"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="111" id="Hhy-nS-z9G">
+                                            <rect key="frame" x="233" y="139" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gtn-mr-83K">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="gwV-34-0ca"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="b2C-6v-gO9"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="113" id="cbf-H5-ztF">
+                                            <rect key="frame" x="44" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ioT-di-nci">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="U7y-21-D5Q"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="Uac-d3-veL"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="114" id="hK3-MQ-nMZ">
+                                            <rect key="frame" x="65" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fwB-Uh-VU9">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="huu-AV-Pvt"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="DUS-a4-MHL"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="115" id="XYK-MP-QQk">
+                                            <rect key="frame" x="86" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Guy-1K-KG0">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="RG6-MH-14S"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="v0L-j0-fFx"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="116" id="53h-ED-b7N">
+                                            <rect key="frame" x="107" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HkL-Jx-uAS">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="yI3-y3-N35"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="vkR-Iy-qKM"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="117" id="ofs-Ea-h0e">
+                                            <rect key="frame" x="128" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gYM-LM-MEO">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="Fv8-qT-Cvn"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="HMG-pf-lmv"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="118" id="grI-cf-PcE">
+                                            <rect key="frame" x="149" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P6x-Np-Ppn">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="JHf-9o-ag6"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="shu-tI-hqg"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Ajd-Bu-2Du">
+                                            <rect key="frame" x="11" y="169" width="265" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="迷惑レスと判定する ID の末尾またはホストを選択：" id="qPo-iF-oY5">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button tag="119" id="J46-jL-DlZ">
+                                            <rect key="frame" x="170" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ca3-9W-uDq">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="pBr-hL-CsF"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="3ge-8H-dx5"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="200" id="kxn-ty-zbi">
+                                            <rect key="frame" x="261" y="139" width="46" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="! (海外)" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ftD-JE-Lqe">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="ZcW-Ew-Cch"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="0kf-sR-Emj"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="112" id="gRz-jf-cin">
+                                            <rect key="frame" x="23" y="118" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gky-D7-LdP">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="hostSymbolChanged:" target="-2" id="c2O-j9-R2O"/>
+                                                <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="jHF-LU-S61"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                    <button toolTip="この掲示板の SETTING.TXT を解析し、名無しさんの名前や Be ログインの設定を自動的に行います。" verticalHuggingPriority="750" id="163">
+                        <rect key="frame" x="8" y="7" width="135" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="SETTING.TXT を解析" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="231">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="startDetect:" target="-2" id="171"/>
+                            <binding destination="-2" name="enabled2" keyPath="isDetecting" previousBinding="174" id="211">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                    <integer key="NSNullPlaceholder" value="-1"/>
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                            <binding destination="-2" name="enabled" keyPath="shouldEnableUI" id="174">
+                                <dictionary key="options">
+                                    <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                    <integer key="NSNullPlaceholder" value="0"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="164">
+                        <rect key="frame" x="146" y="14" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <binding destination="-2" name="animate" keyPath="isDetecting" id="208"/>
+                        </connections>
+                    </progressIndicator>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="0A3FCD54-F879-4DEF-8DCC-53B80735A475" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="small" id="236">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="242"/>
+                    <toolbarItem implicitItemIdentifier="28315BC1-22AA-4512-BE4A-8514E5BB0DDE" explicitItemIdentifier="general" label="一般情報" paletteLabel="NSInfo" tag="-1" image="NSInfo" selectable="YES" id="247">
+                        <nil key="toolTip"/>
+                        <connections>
+                            <action selector="changePane:" target="-2" id="280"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="94E831D0-EF81-4A2C-A7EF-9DA89F15F767" explicitItemIdentifier="reply" label="書き込み" paletteLabel="ReplyPreferences" tag="-1" image="ReplyPreferences" selectable="YES" id="249">
+                        <nil key="toolTip"/>
+                        <connections>
+                            <action selector="changePane:" target="-2" id="281"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="8A997D58-14BC-4F03-917E-6F47C76DF250" explicitItemIdentifier="filter" label="迷惑レス" paletteLabel="FilterPreferences" tag="-1" image="FilterPreferences" selectable="YES" id="248">
+                        <nil key="toolTip"/>
+                        <connections>
+                            <action selector="changePane:" target="-2" id="282"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="247"/>
+                    <toolbarItem reference="249"/>
+                    <toolbarItem reference="248"/>
+                    <toolbarItem reference="242"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <binding destination="-2" name="displayPatternTitle1" keyPath="currentTargetBoardName" id="286">
+                    <dictionary key="options">
+                        <string key="NSDisplayPattern">“%{title1}@” オプション</string>
+                    </dictionary>
+                </binding>
+            </connections>
+        </window>
+        <arrayController objectClassName="NSMutableArray" clearsFilterPredicateOnInsertion="NO" id="90" userLabel="Array Controller">
+            <connections>
+                <binding destination="-2" name="contentArray" keyPath="noNamesArray" id="94"/>
+            </connections>
+        </arrayController>
+    </objects>
+    <resources>
+        <image name="FilterPreferences" width="64" height="64"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="ReplyPreferences" width="64" height="64"/>
+    </resources>
+</document>

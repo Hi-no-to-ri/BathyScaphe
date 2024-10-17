@@ -1,0 +1,18 @@
+/* 
+   CookieManager.strings
+   BathyScaphe
+
+   Created by Tsutomu Sawada on 11/01/23.
+   Copyright 2011 BathyScaphe Project. All rights reserved.
+ */
+
+"beCookie error message text format" = "Be ログインに失敗しました。%@";
+"beCookie error message text" = "Be ログインに失敗しました。";
+"beCookie canceled message text" = "Be ログインがキャンセルされました。";
+
+"beCookie error info text format" = "Be が無効な状態で書き込みます。（エラーコード：%lu）";
+"beCookie canceled info text" = "Be が無効な状態で書き込みます。";
+
+"p2Cookie error message" = "公式 p2 へのログインに失敗したため、書き込みは中止されました。";
+"p2Cookie canceled message" = "公式 p2 へのログインがキャンセルされたため、書き込みは中止されました。";
+"p2Cookie error format" = "ネットワーク接続の状態を確認してください。\n\n問題が解決できない場合は、以下の情報を添えて２ちゃんねるの BathyScaphe スレッドで相談してみてください。\nエラー箇所：%lu エラー種別：%@（%ld）";

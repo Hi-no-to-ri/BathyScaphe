@@ -1,0 +1,19 @@
+{
+  "images" : [
+    {
+      "idiom" : "mac",
+      "scale" : "1x",
+      "filename" : "stopSign.png"
+    },
+    {
+      "idiom" : "mac",
+      "scale" : "2x",
+      "filename" : "stopSign@2x.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode",
+    "template-rendering-intent" : "original"
+  }
+}

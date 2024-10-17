@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5DC6C076-34BA-4268-A1DA-3063E09C9A9D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BathyScaphe</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>b61fe662-1e22-0410-9ebe-d5d0f6be7d5c++9568</key>
+		<string>http://svn.sourceforge.jp/svnroot/bathyscaphe/bathyscaphe/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BathyScaphe.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>b61fe662-1e22-0410-9ebe-d5d0f6be7d5c++9568</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>b61fe662-1e22-0410-9ebe-d5d0f6be7d5c++9568</key>
+		<string>http://svn.sourceforge.jp/svnroot/bathyscaphe</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.sourceforge.jp/svnroot/bathyscaphe/bathyscaphe/trunk/BathyScaphe.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>b61fe662-1e22-0410-9ebe-d5d0f6be7d5c++9568</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>bathyscaphe/branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>bathyscaphe/tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>bathyscaphe/trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>b61fe662-1e22-0410-9ebe-d5d0f6be7d5c++9568</string>
+			<key>IDESourceControlWCCName</key>
+			<string>bathyscaphe</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,5 @@
+/* 
+  KeychainManager.strings
+*/
+
+"Keychain operation failed" = "キーチェーンで問題が発生したため、処理を完了できませんでした。";

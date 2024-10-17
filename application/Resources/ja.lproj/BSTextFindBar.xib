@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="BSFindBarViewController">
+            <connections>
+                <outlet property="progressIndicator" destination="9Cg-dc-ql8" id="Qsz-Bm-caG"/>
+                <outlet property="searchOptionButton" destination="tva-mD-b7V" id="35D-gO-2wY"/>
+                <outlet property="searchTargetButton" destination="aMr-0E-opZ" id="wuP-ms-5qs"/>
+                <outlet property="statusField" destination="B46-Mi-ey7" id="swV-J2-SYJ"/>
+                <outlet property="view" destination="1" id="HHI-9Q-P8l"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="1" customClass="BSSimpleBackgroundView">
+            <rect key="frame" x="0.0" y="0.0" width="388" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <userGuides>
+                <userLayoutGuide location="264" affinity="minY"/>
+                <userLayoutGuide location="49" affinity="minY"/>
+            </userGuides>
+            <subviews>
+                <segmentedControl verticalHuggingPriority="750" id="eE9-CJ-zQq">
+                    <rect key="frame" x="273" y="30" width="50" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="roundRect" trackingMode="momentary" id="3Rp-LM-t1v">
+                        <font key="font" metaFont="cellTitle"/>
+                        <segments>
+                            <segment image="NSLeftFacingTriangleTemplate" width="22"/>
+                            <segment image="NSRightFacingTriangleTemplate" width="21" tag="1"/>
+                        </segments>
+                    </segmentedCell>
+                </segmentedControl>
+                <button verticalHuggingPriority="750" id="0Lf-cD-Kmb">
+                    <rect key="frame" x="228" y="30" width="38" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundRect" title="抽出" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xwr-pg-mKR">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="findAllByFilter:" target="-1" id="CVE-Eb-KbF"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="dj1-3y-Qjt">
+                    <rect key="frame" x="330" y="30" width="38" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundRect" title="完了" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9e5-I3-aCj">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                </button>
+                <searchField wantsLayer="YES" verticalHuggingPriority="750" id="LFK-Z5-3Aa">
+                    <rect key="frame" x="20" y="30" width="200" height="19"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <searchFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="検索文字列" usesSingleLineMode="YES" bezelStyle="round" id="r3C-JN-Boc">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="representedObject.searchString" id="l20-qF-oEt"/>
+                    </connections>
+                </searchField>
+                <popUpButton verticalHuggingPriority="750" id="tva-mD-b7V">
+                    <rect key="frame" x="20" y="5" width="81" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <popUpButtonCell key="cell" type="recessed" title="オプション" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="8Hy-Rt-PLU">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="2ed-gG-Ghy">
+                            <items>
+                                <menuItem title="オプション" state="on" hidden="YES" id="4Cj-l1-vJg"/>
+                                <menuItem title="大文字／小文字を無視" id="r4h-hy-pfE"/>
+                                <menuItem title="検索文字列を正規表現として解釈" id="cOQ-Kn-FD5"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="chooseSearchOption:" target="-2" id="g2E-9Z-y2m"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" id="aMr-0E-opZ">
+                    <rect key="frame" x="111" y="5" width="70" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <popUpButtonCell key="cell" type="recessed" title="検索対象" bezelStyle="recessed" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" tag="-1" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="dpU-Eo-3Im">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" title="OtherViews" id="5Qh-MI-HN8">
+                            <items>
+                                <menuItem title="検索対象" state="on" tag="-1" hidden="YES" id="Rbx-LP-CTm"/>
+                                <menuItem title="名前" tag="1" id="PdN-NO-ODZ"/>
+                                <menuItem title="メール" tag="2" id="iZs-cU-WsL"/>
+                                <menuItem title="ID" tag="4" id="Y1Y-2Q-FlL">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="ホスト" tag="8" id="Rmb-hw-T2w">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="本文" tag="16" id="FW2-3Y-cR4">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="chooseSearchTarget:" target="-2" id="uzE-6J-9z4"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="B46-Mi-ey7">
+                    <rect key="frame" x="211" y="8" width="159" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="999 件見つかりました" id="tAW-Az-TyU">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="9Cg-dc-ql8">
+                    <rect key="frame" x="189" y="7" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </progressIndicator>
+            </subviews>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
+    </resources>
+</document>

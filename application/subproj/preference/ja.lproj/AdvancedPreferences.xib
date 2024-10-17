@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AdvancedPrefController">
+            <connections>
+                <outlet property="_contentView" destination="5" id="34"/>
+                <outlet property="m_bbsMenuURLChooser" destination="n3v-Kn-jp3" id="vEd-Im-8jc"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="530" height="355"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <userGuides>
+                <userLayoutGuide location="99" affinity="minY"/>
+                <userLayoutGuide location="510" affinity="minX"/>
+            </userGuides>
+            <subviews>
+                <button id="308">
+                    <rect key="frame" x="53" y="155" width="139" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="開いているスレッド" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="427">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="170" name="value" keyPath="selection.autoReloadViewerWhenWake" id="379">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <bool key="NSAlwaysPresentsApplicationModalAlerts" value="NO"/>
+                                <bool key="NSConditionallySetsEnabled" value="YES"/>
+                                <bool key="NSConditionallySetsHidden" value="NO"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button id="306">
+                    <rect key="frame" x="53" y="175" width="100" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="スレッド一覧" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="426">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="170" name="value" keyPath="selection.autoReloadListWhenWake" id="336">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <bool key="NSAlwaysPresentsApplicationModalAlerts" value="NO"/>
+                                <bool key="NSConditionallySetsEnabled" value="YES"/>
+                                <bool key="NSConditionallySetsHidden" value="NO"/>
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="304">
+                    <rect key="frame" x="18" y="199" width="420" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="コンピュータのスリープを解除したときに自動的に更新させたいもの：" id="425">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="78">
+                    <rect key="frame" x="53" y="291" width="230" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="ID や逆参照をポップアップする方法：" id="420">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton toolTip="スレッドを “Web ブラウザで開く” 際に、Web ブラウザで表示するレス数を選択します。" verticalHuggingPriority="750" id="68">
+                    <rect key="frame" x="285" y="317" width="193" height="26"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <popUpButtonCell key="cell" type="push" title="最新 50 レス" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="72" id="419">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="69">
+                            <items>
+                                <menuItem title="最新 50 レス" state="on" id="72"/>
+                                <menuItem title="最初の 100 レス" tag="1" id="71"/>
+                                <menuItem title="すべて" tag="2" id="70"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="170" name="selectedTag" keyPath="selection.openInBrowserType" id="182">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <textField verticalHuggingPriority="750" id="67">
+                    <rect key="frame" x="54" y="323" width="229" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="“Web ブラウザで開く”ときのレス数：" id="418">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="ログを削除する前に確認のダイアログを表示させるには、ここをチェックします。" id="21">
+                    <rect key="frame" x="53" y="112" width="282" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="ログファイルを削除する前に警告を表示する" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="416">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="170" name="value" keyPath="selection.quietDeletion" id="178">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <integer key="NSNotApplicablePlaceholder" value="1"/>
+                                <integer key="NSNullPlaceholder" value="1"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button toolTip="ログファイルをバイナリ形式で保存するには、ここをチェックします。バイナリ形式ではファイルサイズが小さくなり、動作速度も向上しますが、テキストエディタ等でログファイルを開くことはできなくなります。" id="475">
+                    <rect key="frame" x="53" y="92" width="256" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="ログファイルをバイナリ形式で保存する" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="476">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="170" name="value" keyPath="selection.saveThreadDocAsBinaryPlist" id="486">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="0"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button toolTip="スレッド一覧およびスレッドの内容表示領域でマルチタッチジェスチャを使用するには、ここをチェックします。" id="494">
+                    <rect key="frame" x="53" y="243" width="243" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="マルチタッチジェスチャを有効にする" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="495">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="170" name="value" keyPath="selection.multitouchGestureEnabled" id="502">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="503">
+                    <rect key="frame" x="21" y="271" width="489" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="515">
+                    <rect key="frame" x="21" y="228" width="489" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="505">
+                    <rect key="frame" x="21" y="140" width="489" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="p4o-W1-ilx">
+                    <rect key="frame" x="21" y="77" width="489" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <popUpButton verticalHuggingPriority="750" id="U2r-Zz-5Vr">
+                    <rect key="frame" x="285" y="285" width="193" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="長押し" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="Ild-b7-ge8" id="ONA-ju-1gm">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="Cbq-2Y-8fA">
+                            <items>
+                                <menuItem title="長押し" state="on" tag="2" id="Ild-b7-ge8"/>
+                                <menuItem title="クリック" tag="1" id="1MP-aI-jE1"/>
+                                <menuItem title="マウスオーバー" id="yhi-rc-39s"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="170" name="selectedTag" keyPath="selection.popupTriggerType" id="0iF-Tl-xYk">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </popUpButton>
+                <comboBox verticalHuggingPriority="750" id="n3v-Kn-jp3">
+                    <rect key="frame" x="55" y="16" width="422" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Ppd-Bo-RgS">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <objectValues>
+                            <string>http://azlucky.s25.xrea.com/2chboard/bbsmenu2.html</string>
+                            <string>http://kita.jikkyo.org/cbm/cbm.cgi/20.p0.m0.sc.99/-all/bbsmenu.html</string>
+                            <string>http://kita.jikkyo.org/cbm/cbm.cgi/20.p0.m0.jb.sc.xp.vs.op.nb.bb.29.99/-all/bbsmenu.html</string>
+                        </objectValues>
+                    </comboBoxCell>
+                    <connections>
+                        <action selector="didChooseBbsMenuURL:" target="-2" id="2OR-MQ-ajL"/>
+                    </connections>
+                </comboBox>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Jjw-BA-WT1">
+                    <rect key="frame" x="19" y="48" width="147" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="掲示板リストの同期先：" id="S2a-53-sDK">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="25">
+                    <rect key="frame" x="491" y="18" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" inset="2" id="417">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openHelp:" target="-2" id="66"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="372" y="326.5"/>
+        </customView>
+        <objectController objectClassName="AppDefaults" id="170" userLabel="Object Controller">
+            <declaredKeys>
+                <string>openInBg</string>
+                <string>quietDeletion</string>
+                <string>mouseDownTrackingTime</string>
+                <string>openInBrowserType</string>
+                <string>autoCheckIntervalTag</string>
+                <string>checkAutomatically</string>
+                <string>autoReloadListWhenWake</string>
+                <string>delayForAutoReloadAtWaking</string>
+                <string>autoReloadViewerWhenWake</string>
+                <string>showsSAAPIcon</string>
+                <string>saveThreadDocAsBinaryPlist</string>
+                <string>multitouchGestureEnabled</string>
+                <string>shouldForceLayoutForLoadedMessages</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentObject" keyPath="preferences" id="171"/>
+            </connections>
+        </objectController>
+    </objects>
+</document>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:application/BathyScaphe.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:dat-qlgenerator/dat.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:metadataimporter/BathyScaphe/BathyScapheMDI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:frameworks/CocoaOniguruma/framework/CocoaOniguruma.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:frameworks/CocoMonar/CMF.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:frameworks/SGAppKit/SGAppKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:frameworks/SGFoundation/SGFoundation.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GeneralPrefController">
+            <connections>
+                <outlet property="_contentView" destination="5" id="13"/>
+                <outlet property="m_autoscrollRadioButtons" destination="3Be-ak-nZp" id="nUX-KQ-stV"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="5" userLabel="Pane">
+            <rect key="frame" x="0.0" y="0.0" width="530" height="319"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button toolTip="BathyScaphe の新しいバージョンが利用可能かどうかを自動的に確認するには、ここをチェックします。" id="344">
+                    <rect key="frame" x="126" y="67" width="278" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="BathyScaphe アップデートを自動的に確認" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="441">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="319" name="value" keyPath="selection.autoCheckForUpdate" id="357">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="342">
+                    <rect key="frame" x="20" y="93" width="490" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button toolTip="スレッドを更新したとき、自動的に新着レスの位置までスクロールさせるには、ここをチェックします。" id="313">
+                    <rect key="frame" x="238" y="108" width="243" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="新着レスまで自動的にスクロールする" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="440">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="319" name="value" keyPath="selection.scrollToLastUpdated" id="335">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="0"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="288">
+                    <rect key="frame" x="75" y="286" width="160" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="スレッド一覧の並び順序：" id="439">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="250">
+                    <rect key="frame" x="75" y="109" width="160" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="スレッドを更新したとき：" id="437">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" id="469">
+                    <rect key="frame" x="18" y="202" width="217" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="“次の未読スレッドを開く” の動作：" usesSingleLineMode="YES" id="470">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="ソート基準に関わらず、常に新着スレッドを最上位に表示させるには、ここをチェックします。" id="216">
+                    <rect key="frame" x="238" y="285" width="243" height="18"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="check" title="新着スレッドは常に最上位に表示する" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="432">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="319" name="value" keyPath="selection.collectByNew" id="333">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="0"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" id="215">
+                    <rect key="frame" x="492" y="17" width="21" height="23"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" inset="2" id="431">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openHelp:" target="-2" id="235"/>
+                    </connections>
+                </button>
+                <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" id="213">
+                    <rect key="frame" x="20" y="134" width="490" height="5"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button toolTip="スレッドの更新や削除によって状態が変化したとき、スレッド一覧をすぐにソートし直すかどうかを選択します。" id="446">
+                    <rect key="frame" x="238" y="265" width="269" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="スレッドの更新／削除後すぐに並び替える" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="447">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="319" name="value" keyPath="selection.sortsImmediately" id="452">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField verticalHuggingPriority="750" id="448">
+                    <rect key="frame" x="255" y="231" width="258" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="お気に入りとスマート掲示板では、この設定に関係なくすぐに並び替えが行われます。" id="449">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button toolTip="定期的に掲示板リストを同期して最新の状態に保つには、ここをチェックします。" id="453">
+                    <rect key="frame" x="126" y="47" width="217" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="掲示板リストを自動的に同期する" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="454">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="319" name="value" keyPath="selection.autoSyncBoardList" id="458"/>
+                    </connections>
+                </button>
+                <button toolTip="“次の未読スレッドを開く” 際に新着スレッドも対象に含めるには、ここをチェックします。" id="471">
+                    <rect key="frame" x="238" y="201" width="191" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="新着スレッドも対象に含める" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="472">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="319" name="value" keyPath="selection.nextUpdatedThreadContainsNewThread" id="475">
+                            <dictionary key="options">
+                                <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="we9-fX-A75">
+                    <rect key="frame" x="49" y="173" width="186" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="選択行の位置が変化したとき：" id="tlM-43-bjG">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <matrix toolTip="スレッドの更新や削除によって、スレッド一覧で選択されている行の位置が変化したときの動作を選択します。" verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="3Be-ak-nZp">
+                    <rect key="frame" x="238" y="152" width="269" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    <size key="cellSize" width="269" height="18"/>
+                    <size key="intercellSpacing" width="4" height="2"/>
+                    <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="vgj-JR-Ftt">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <cells>
+                        <column>
+                            <buttonCell type="radio" title="選択行の位置まで自動的にスクロールする" imagePosition="left" alignment="left" state="on" inset="2" id="M4Q-eE-q9L">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <buttonCell type="radio" title="何もしない" imagePosition="left" alignment="left" tag="1" inset="2" id="7qZ-h3-EV9">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </column>
+                    </cells>
+                    <connections>
+                        <action selector="changeAutoscrollSettings:" target="-2" id="mws-Qk-Tqb"/>
+                    </connections>
+                </matrix>
+            </subviews>
+            <point key="canvasLocation" x="447" y="348.5"/>
+        </customView>
+        <objectController objectClassName="AppDefaults" id="319" userLabel="Object Controller">
+            <declaredKeys>
+                <string>autoReloadListWhenWake</string>
+                <string>showsAllMessagesWhenDownloaded</string>
+                <string>threadViewerLinkType</string>
+                <string>collectByNew</string>
+                <string>scrollToLastUpdated</string>
+                <string>firstVisibleCount</string>
+                <string>lastVisibleCount</string>
+                <string>autoCheckForUpdate</string>
+                <string>softwareUpdateCheckInterval</string>
+                <string>isSplitViewVertical</string>
+                <string>sortsImmediately</string>
+                <string>autoSyncBoardList</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="-2" name="contentObject" keyPath="preferences" id="320"/>
+            </connections>
+        </objectController>
+    </objects>
+</document>

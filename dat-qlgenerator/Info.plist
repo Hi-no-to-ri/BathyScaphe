@@ -1,0 +1,114 @@
+#define VERSION 0.0.2
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>ja_JP</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+	#ifndef BUILD_FOR_BATHYSCAPHE
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>net.2ch.dat</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>dat</string>
+				</array>
+			</dict>
+		</dict>
+	#endif
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>jp.tsawada2.bathyscaphe.thread</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>thread</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>QLGenerator</string>
+			<key>LSItemContentTypes</key>
+			<array>
+			#ifndef BUILD_FOR_BATHYSCAPHE
+				<string>net.2ch.dat</string>
+			#endif
+				<string>jp.tsawada2.bathyscaphe.thread</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	#ifdef BUILD_FOR_BATHYSCAPHE
+	<string>jp.tsawada2.BathyScaphe.qlgenerator</string>
+	#else
+	<string>com.fc2.web.outofboundary.qlgenerator.${PRODUCT_NAME:identifier}</string>
+	#endif
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>CFBundleVersion</key>
+	<string>VERSION</string>
+	<key>CFPlugInDynamicRegisterFunction</key>
+	<string></string>
+	<key>CFPlugInDynamicRegistration</key>
+	<string>NO</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+	#ifdef BUILD_FOR_BATHYSCAPHE 
+		<key>4418A583-2AF8-4978-8981-135D2BFE6749</key>
+	#else
+		<key>0FA2C21B-874B-4BF5-895C-1057BC05E272</key>
+	#endif
+		<string>QuickLookGeneratorPluginFactory</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>5E2D9680-5022-40FA-B806-43349622E5B9</key>
+		<array>
+		#ifdef BUILD_FOR_BATHYSCAPHE
+			<string>4418A583-2AF8-4978-8981-135D2BFE6749</string>
+		#else
+			<string>0FA2C21B-874B-4BF5-895C-1057BC05E272</string>
+		#endif
+		</array>
+	</dict>
+	<key>CFPlugInUnloadFunction</key>
+	<string></string>
+	<key>QLNeedsToBeRunInMainThread</key>
+	<true/>
+	<key>QLPreviewHeight</key>
+	<real>600</real>
+	<key>QLPreviewWidth</key>
+	<real>800</real>
+	<key>QLSupportsConcurrentRequests</key>
+	<false/>
+	<key>QLThumbnailMinimumSize</key>
+	<real>17</real>
+</dict>
+</plist>
